@@ -1,5 +1,5 @@
-function Notfound() {
-  return <div>잘못된 경로 입니다.</div>;
+function NotFound() {
+  return <div>not-found</div>;
 }
 
-export default Notfound;
+export default NotFound;

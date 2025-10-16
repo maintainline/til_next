@@ -1,11 +1,11 @@
 "use client";
-import Styles from "@/components/SearchBar.module.css";
+import styles from "@/components/SearchBar.module.css";
 import { useRouter, useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 const SearchBar = () => {
   // 동적 라우팅
-  const router = useRouter(); // 'next/navigation
+  const router = useRouter(); // next/navigation
   const searchParams = useSearchParams();
   const [search, setSearch] = useState("");
 
@@ -23,6 +23,7 @@ const SearchBar = () => {
     if (!search.trim() || q === search) {
       return;
     }
+
     router.push(`/search?keyword=jewelery`);
   };
 
@@ -33,7 +34,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div className={Styles.container}>
+    <div className={styles.container}>
       <input
         type="text"
         value={search}

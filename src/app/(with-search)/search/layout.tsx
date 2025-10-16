@@ -5,11 +5,7 @@ interface LayoutProps {
 }
 
 function Layout({ children }: LayoutProps) {
-  return (
-    <div>
-      {children}
-    </div>
-  );
+  return <div>{children}</div>;
 }
 
 export default Layout;

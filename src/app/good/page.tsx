@@ -1,7 +1,5 @@
-import React from "react";
-
-function Page() {
+async function page() {
   return <div>상품</div>;
 }
 
-export default Page;
+export default page;

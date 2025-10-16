@@ -2,6 +2,7 @@ import { GoodDataType } from "@/types/types";
 import styles from "@/components/GoodItem.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import { DeleteBt } from "./DeleteBt";
 
 const GoodItem = ({ id, title, image, category, rating }: GoodDataType) => {
   return (
@@ -12,7 +13,7 @@ const GoodItem = ({ id, title, image, category, rating }: GoodDataType) => {
         <div className={styles.category}>{category}</div>
         <br />
         <div className={styles.rating}>
-          Rating : {rating.rate} | {rating.count}
+          Rating: {rating.rate} | {rating.count}
         </div>
       </div>
     </Link>

@@ -6,10 +6,10 @@ import { GoodDataType } from "@/types/types";
 import { delay } from "@/util/delay";
 import { Suspense } from "react";
 
-// Dynamic Page로 강제로 설정합니다. (권장하지 않음, 수업이라서)
+// Dynamic Page 로 강제로 설정합니다. (권장하지 않음, 수업이라서)
 // export const dynamic = "force-dynamic";
 
-// 1.전체 제품 목록 가져오기
+// 1. 전체 제품 목록 가져오기
 async function AllGoods() {
   // 수업을 위해서 강제로 delay 시킴
   // await delay(1500);
@@ -53,13 +53,25 @@ function Home() {
     <div className={styles.container}>
       <section>
         <h3>지금 추천하는 상품</h3>
-        <Suspense fallback={<GoodItemListSkeleton count={3} />}>
+        <Suspense
+          fallback={
+            <>
+              <GoodItemListSkeleton count={3} />
+            </>
+          }
+        >
           <RecommendGoods />
         </Suspense>
       </section>
       <section>
         <h3>전체 상품</h3>
-        <Suspense fallback={<GoodItemListSkeleton count={5} />}>
+        <Suspense
+          fallback={
+            <>
+              <GoodItemListSkeleton count={5} />
+            </>
+          }
+        >
           <AllGoods />
         </Suspense>
       </section>

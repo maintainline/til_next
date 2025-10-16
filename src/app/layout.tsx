@@ -2,12 +2,11 @@ import React from "react";
 import "./globals.css";
 import styles from "@/app/layout.module.css";
 import Link from "next/link";
-
 interface RootLayoutProps {
   children: React.ReactNode;
 }
 
-function RootLayout({ children }: RootLayoutProps) {
+function Rootlayout({ children }: RootLayoutProps) {
   return (
     <html>
       <body>
@@ -23,4 +22,4 @@ function RootLayout({ children }: RootLayoutProps) {
   );
 }
 
-export default RootLayout;
+export default Rootlayout;

@@ -5,7 +5,7 @@ import { delay } from "@/util/delay";
 import { Suspense } from "react";
 
 // 실제로는 외부 컴포넌트로 추출하기를 권장 : components 폴더 / SearchResult.tsx
-// 리액트 Suspense 로 세밀하게 로딩 처리하기.
+// 리액트 suspense 로 세밀하게 로딩 처리하기
 interface SearchResultProps {
   keyword: string;
 }
@@ -39,6 +39,7 @@ interface PageProps {
 
 async function Page({ searchParams }: PageProps) {
   const { keyword } = await searchParams;
+
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <SearchResult keyword={keyword} />;

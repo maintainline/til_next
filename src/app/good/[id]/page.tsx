@@ -1,16 +1,21 @@
+import { createReviewAction } from "@/actions/create-review-action";
 import styles from "@/app/good/[id]/page.module.css";
+import CateList from "@/components/CateList";
+import ReviewForm from "@/components/ReviewForm";
 import { GoodDataType } from "@/types/types";
 import Image from "next/image";
 
-// 제품 상세정보 출력 컴포넌트 : components 에 별도로 추출하길 권장
+// 제품 상세 정보 출력 컴포넌트 :  components 에 별도로 추출하길 권장
 interface GoodDetailProps {
   id: string;
 }
-
 async function GoodDetail({ id }: GoodDetailProps) {
   // fetch 를 이용한 자료 출력
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/products/${id}`
+    `${process.env.NEXT_PUBLIC_API_URL}/products/${id}`,
+    {
+      next: { tags: [`good-${id}`] },
+    }
   );
 
   const good: GoodDataType = await response.json();
@@ -27,34 +32,11 @@ async function GoodDetail({ id }: GoodDetailProps) {
       </div>
       <div className={styles.category}>{category}</div>
       <div className={styles.rating}>
-        Rating : {rating.rate} | {rating.count}
+        Rating: {rating.rate} | {rating.count}
       </div>
       <div className={styles.description}>{description}</div>
     </div>
   );
-}
-
-// 입력폼 components 추출
-function ReviewForm() {
-  // Action 용 함수
-  async function createReviewAction() {
-    "use server";
-    console.log("서버액션코드");
-  }
-  return (
-    <section>
-      <form action={createReviewAction}>
-        <input type="text" name="content" placeholder="리뷰작성" />
-        <input type="text" name="author" placeholder="작성자" />
-        <button type="submit">작성하기</button>
-      </form>
-    </section>
-  );
-}
- 
-// 약속된 Next 함수임(미리 페이지를 Static 페이지 이고, SSR 페이지 이다.)
-export function generateStaticParams() {
-  return [{ id: "1" }, { id: "2" }, { id: "3" }];
 }
 
 interface PageProps {
@@ -68,6 +50,7 @@ async function Page({ params }: PageProps) {
     <div className={styles.container}>
       <GoodDetail id={id} />
       <ReviewForm />
+      <CateList id={id} />
     </div>
   );
 }
