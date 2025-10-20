@@ -12,7 +12,7 @@ function Error({ error, reset }: ErrorProps) {
 
   useEffect(() => {
     console.log(error.message);
-  }, []);
+  }, [error]);
   return (
     <div>
       <h3>{error.message} 에러가 발생했습니다.</h3>

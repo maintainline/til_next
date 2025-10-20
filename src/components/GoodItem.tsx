@@ -1,8 +1,7 @@
-import { GoodDataType } from "@/types/types";
 import styles from "@/components/GoodItem.module.css";
+import { GoodDataType } from "@/types/types";
 import Image from "next/image";
 import Link from "next/link";
-import { DeleteBt } from "./DeleteBt";
 
 const GoodItem = ({ id, title, image, category, rating }: GoodDataType) => {
   return (

@@ -1,7 +1,7 @@
 "use server";
 
 import { delay } from "@/util/delay";
-import { revalidatePath, revalidateTag } from "next/cache";
+import { revalidateTag } from "next/cache";
 
 // Action 용 함수
 // useActionState 활용시 : Action 의 상태도 전달을 하는 형태로 적용필요

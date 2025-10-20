@@ -1,4 +1,3 @@
-import { createReviewAction } from "@/actions/create-review-action";
 import styles from "@/app/good/[id]/page.module.css";
 import CateList from "@/components/CateList";
 import ReviewForm from "@/components/ReviewForm";

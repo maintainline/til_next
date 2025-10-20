@@ -1,9 +1,7 @@
 import styles from "@/app/(with-search)/page.module.css";
 import GoodItem from "@/components/GoodItem";
 import GoodItemListSkeleton from "@/components/skeleton/GoodItemListSkeleton";
-import GoodItemSkeleton from "@/components/skeleton/GoodItemSkeleton";
 import { GoodDataType } from "@/types/types";
-import { delay } from "@/util/delay";
 import { Suspense } from "react";
 
 // Dynamic Page 로 강제로 설정합니다. (권장하지 않음, 수업이라서)
